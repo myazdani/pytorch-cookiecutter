@@ -1,0 +1,8 @@
+{
+    "repo_name": "Name for repo",
+    "proj_name": "MNIST_classifier",
+    "dataset": "mnist_in_csv",
+    "dataset_loading_module": "MnistInCSV",
+    "readme_project_name": "Project Name for Readme",
+    "project_desc": "Project Description for Readme"
+}
