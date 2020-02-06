@@ -132,10 +132,10 @@ class BaseModel:
             data_loader_acc = self._evaluate_data_loader(data_loader)
             return data_loader_acc
         
-    def train_validation_loader(self, dataset_cls, csv_file, batch_size = 32, validation_split = .2, 
-                                shuffle_dataset = True, random_seed = None):
+    def train_validation_loader(self, dataset_cls, batch_size = 32, validation_split = .2, 
+                                shuffle_dataset = True, random_seed = None, **kwargs):
         '''https://stackoverflow.com/a/50544887'''
-        dataset = dataset_cls(csv_file)
+        dataset = dataset_cls(**kwargs)
         # Creating data indices for training and validation splits:
         dataset_size = len(dataset)
         indices = list(range(dataset_size))
