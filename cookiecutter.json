@@ -1,8 +1,8 @@
 {
-    "repo_name": "Name for repo",
-    "proj_name": "MNIST_classifier", 
-    "dataset_loading_class": "MnistInCSV (camel case)",
+    "repo_name": "project-repo",
+    "proj_name": "deep_model", 
+    "dataset_loading_class": "DataSetLoading",
     "dataset": "dataset",
     "readme_project_name": "Project Name",
-    "project_desc": "Project desc"
+    "project_desc": "Project description"
 }
