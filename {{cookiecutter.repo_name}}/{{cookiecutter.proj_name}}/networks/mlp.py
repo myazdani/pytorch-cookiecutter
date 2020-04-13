@@ -27,7 +27,6 @@ class MLP(nn.Module):
             self.layers.append(nn.ReLU())
             self.layers.append(nn.Dropout(dropout_amount))
         self.layers.append(nn.Linear(layer_size,num_classes))
-        self.layers.append(nn.Softmax(dim = 1))
 
     
     def forward(self, x):

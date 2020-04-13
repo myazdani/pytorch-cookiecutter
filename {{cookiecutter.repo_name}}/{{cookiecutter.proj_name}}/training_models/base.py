@@ -13,7 +13,7 @@ DIRNAME = Path(__file__).parents[1].resolve() / 'weights'
 class BaseModel:
     def __init__(self, dataset_cls: type, network_fn: Callable, dataset_args: Dict = None, 
                  network_args: Dict = None, optimizer: str = None, optimizer_args: Dict = None,
-                 device = "cpu"):
+                 loss: str = None, loss_args : Dict = {}, device = "cpu"):
         
         self.name = f'{self.__class__.__name__}_{dataset_cls.__name__}_{network_fn.__name__}'
         
@@ -29,7 +29,7 @@ class BaseModel:
         self.optimizer = getattr(torch.optim, optimizer)(self.network.parameters(), 
                                                          **optimizer_args)
         
-        self.criterion = torch.nn.CrossEntropyLoss()
+        self.criterion = getattr(torch.nn, loss)(**loss_args)
         
         self.device = device
         

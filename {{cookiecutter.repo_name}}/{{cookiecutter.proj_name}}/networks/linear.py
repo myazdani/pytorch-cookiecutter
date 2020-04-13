@@ -19,7 +19,6 @@ class Linear(nn.Module):
 
         self.layers = nn.ModuleList()
         self.layers.append(nn.Linear(num_inputs, num_classes))    
-        self.layers.append(nn.Softmax(dim = 1))
 
     
     def forward(self, x):
