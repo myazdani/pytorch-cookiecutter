@@ -24,6 +24,7 @@ class MLP(nn.Module):
         self.layers.append(nn.Linear(num_inputs, layer_size))    
         self.layers.append(nn.ReLU())
         self.layers.append(nn.Dropout(dropout_amount))
+        self.layers.append(nn.ReLU())
         for _ in range(num_layers):
             self.layers.append(nn.Linear(layer_size, layer_size))
             self.layers.append(nn.ReLU())
