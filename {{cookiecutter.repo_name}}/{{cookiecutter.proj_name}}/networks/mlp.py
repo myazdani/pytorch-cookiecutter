@@ -17,11 +17,13 @@ class MLP(nn.Module):
         self.input_shape = input_shape
         self.output_shape = output_shape
     
-        num_classes = self.output_shape[0]
-        num_inputs = self.input_shape[0]        
+        num_classes = self.output_shape
+        num_inputs = self.input_shape
 
         self.layers = nn.ModuleList()
         self.layers.append(nn.Linear(num_inputs, layer_size))    
+        self.layers.append(nn.ReLU())
+        self.layers.append(nn.Dropout(dropout_amount))
         for _ in range(num_layers):
             self.layers.append(nn.Linear(layer_size, layer_size))
             self.layers.append(nn.ReLU())
